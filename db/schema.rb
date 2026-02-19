@@ -10,5 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 0) do
+ActiveRecord::Schema[8.1].define(version: 2026_02_19_233902) do
+  create_table "cards", force: :cascade do |t|
+    t.integer "card_id"
+    t.datetime "created_at", null: false
+    t.string "title"
+    t.datetime "updated_at", null: false
+    t.index ["card_id"], name: "index_cards_on_card_id"
+  end
+
+  add_foreign_key "cards", "cards"
 end

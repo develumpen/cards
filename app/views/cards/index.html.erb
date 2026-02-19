@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Cards" %>
+
+<h1>Cards</h1>
+
+<div class="cards" id="cards">
+  <%= render @cards %>
+</div>
+
+<%= link_to "New card", new_card_path %>
