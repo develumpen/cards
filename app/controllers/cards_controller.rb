@@ -3,7 +3,7 @@ class CardsController < ApplicationController
 
   # GET /cards or /cards.json
   def index
-    @cards = Card.all
+    @cards = Card.where(card_id: nil)
   end
 
   # GET /cards/1 or /cards/1.json
@@ -40,6 +40,7 @@ class CardsController < ApplicationController
       if @card.update(card_params)
         format.html { redirect_to @card, notice: "Card was successfully updated.", status: :see_other }
         format.json { render :show, status: :ok, location: @card }
+        format.turbo_stream
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @card.errors, status: :unprocessable_entity }

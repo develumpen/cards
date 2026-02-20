@@ -2,8 +2,7 @@
 
 one:
   title: MyString
-  card: one
 
 two:
   title: MyString
-  card: two
+  card: one

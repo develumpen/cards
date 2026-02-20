@@ -39,7 +39,8 @@ class CardsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy card" do
-    assert_difference("Card.count", -1) do
+    # -2 because has a nested card
+    assert_difference("Card.count", -2) do
       delete card_url(@card)
     end
 
