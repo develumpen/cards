@@ -7,8 +7,7 @@
   <h1><%= link_to card.title, card %></h1>
 
   <div class="card-content">
-    <p>This is the content of the card.</p>
-    <p>Multiple lines are accepted.</p>
+    <%= simple_format card.body %>
   </div>
 </div>
 

@@ -66,6 +66,6 @@ class CardsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def card_params
-      params.expect(card: [ :title, :card_id ])
+      params.expect(card: [ :title, :body, :card_id ])
     end
 end
