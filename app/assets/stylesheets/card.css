@@ -32,7 +32,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    border-bottom: 4px double var(--color-red-line);
+    border-bottom: double var(--color-red-line);
 }
 
 .card-content {
