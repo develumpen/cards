@@ -9,13 +9,25 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+.container {
+  padding: 0 1rem;
 }
 
-.card {
-  padding: 1rem;
-  border: 1px solid black;
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
 }
+
+@media (min-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1440px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
