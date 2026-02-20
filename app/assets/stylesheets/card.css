@@ -33,6 +33,11 @@
     overflow: hidden;
     text-overflow: ellipsis;
     border-bottom: double var(--color-red-line);
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
 }
 
 .card-content {
