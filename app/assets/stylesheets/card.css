@@ -20,6 +20,10 @@
   box-shadow: var(--box-shadow);
   font-family: var(--font-family);
   overflow: hidden;
+
+  :hover {
+    cursor: pointer;
+  }
 }
 
 .card h1 {

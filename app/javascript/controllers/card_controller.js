@@ -1,13 +1,11 @@
 import { Controller } from "@hotwired/stimulus"
+import { Turbo } from "@hotwired/turbo-rails"
 import { patch } from "@rails/request.js"
 
 // Connects to data-controller="card"
 export default class extends Controller {
   static values = {
     id: Number
-  }
-
-  connect() {
   }
 
   dragStart(event) {
@@ -37,5 +35,10 @@ export default class extends Controller {
       }),
       responseKind: "turbo-stream"
     })
+  }
+
+  goToCard() {
+    const url = this.element.querySelector("h1>a")?.href
+    Turbo.visit(url)
   }
 }
