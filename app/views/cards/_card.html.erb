@@ -1,28 +1,14 @@
-  <div class="card" id="<%= dom_id card %>" draggable="true" data-controller="card" data-card-id-value="<%= card.id %>" data-action="dragstart->card#dragStart dragover->card#dragOver drop->card#drop">
-    <%= link_to card.title, card %>
+<div class="<%= class_names("card", { "multiple": (card.cards.any? && params[:id].to_i != card.id) }) %>"
+     id="<%= dom_id card %>"
+     draggable="true"
+     data-controller="card"
+     data-card-id-value="<%= card.id %>"
+     data-action="dragstart->card#dragStart dragover->card#dragOver drop->card#drop">
+  <h1><%= link_to card.title, card %></h1>
 
-    <% if action_name == "show" && params[:id] == card.id.to_s %>
-      <% if card.card_id %>
-        (parent: <%= link_to card.card.title, card.card %>)
-      <% end %>
-    <% end %>
-
-    <% unless action_name == "show" && params[:id] == card.id.to_s %>
-      <% if card.cards.any? %>
-        <h3>Nested cards</h3>
-        <ul>
-          <% card.cards.each do |nested_card| %>
-            <li><%= link_to nested_card.title, nested_card %></li>
-          <% end %>
-        </ul>
-      <% end %>
-    <% end %>
+  <div class="card-content">
+    <p>This is the content of the card.</p>
+    <p>Multiple lines are accepted.</p>
   </div>
+</div>
 
-  <% if action_name == "show" && params[:id] == card.id.to_s && card.cards.any? %>
-    <h2>Nested cards</h2>
-
-    <div class="cards">
-      <%= render card.cards %>
-    </div>
-  <% end %>

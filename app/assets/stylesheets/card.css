@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
+
+.card {
+  --font-family: 'La Belle Aurore', cursive, sans-serif;
+  --font-size: 24px;
+  --line-height: calc(var(--font-size) * 1.68);
+  --lines: 8;
+  --padding-x: 40px;
+  --color-paper: #e8e6e0;
+  --color-text: #1e1e50;
+  --color-title: #2b2b2b;
+  --color-rule: #a4c2e0;
+  --color-red-line: #c03030;
+  --baseline-offset: calc(var(--line-height) / -2 + var(--font-size) * 0.2 + 1px);
+  --border-radius: 6px;
+  --box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.18);
+
+  background: var(--color-paper);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  font-family: var(--font-family);
+  overflow: hidden;
+}
+
+.card h1 {
+    margin: 0;
+    padding: 0 var(--padding-x);
+    height: calc(var(--line-height) * 2);
+    line-height: calc(var(--line-height) * 2 + 8px);
+    font-size: calc(var(--font-size) * 1.2);
+    color: var(--color-title);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-bottom: 4px double var(--color-red-line);
+}
+
+.card-content {
+  padding: calc(-1 * var(--baseline-offset)) var(--padding-x) 0;
+  height: calc(var(--line-height) * var(--lines) - var(--baseline-offset));
+  line-height: var(--line-height);
+  font-size: var(--font-size);
+  color: var(--color-text);
+  overflow: hidden;
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent calc(var(--line-height) - 1px),
+    var(--color-rule) calc(var(--line-height) - 1px),
+    var(--color-rule) var(--line-height)
+  );
+  background-origin: content-box;
+  background-position-y: var(--baseline-offset);
+}
+
+.card-content p {
+  margin: 0;
+}
+
+.card.multiple {
+  position: relative;
+  overflow: visible;
+}
+
+.card.multiple::before,
+.card.multiple::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-paper);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  z-index: -1;
+}
+
+.card.multiple::before {
+  transform: rotate(2.5deg) translate(2px, 3px);
+}
+.card.multiple::after {
+  transform: rotate(-1.5deg) translate(-1px, 2px);
+}

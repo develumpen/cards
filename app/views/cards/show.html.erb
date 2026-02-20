@@ -8,3 +8,9 @@
 
   <%= button_to "Destroy this card", @card, method: :delete %>
 </div>
+
+<% if params[:id] == @card.id.to_s && @card.cards.any? %>
+  <div class="cards">
+    <%= render @card.cards %>
+  </div>
+<% end %>
