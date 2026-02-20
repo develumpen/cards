@@ -2,10 +2,9 @@
 
 <% content_for :title, "Cards" %>
 
-<h1>Cards</h1>
+<%= link_to "New card", new_card_path %>
 
 <div class="cards" id="cards">
   <%= render @cards %>
 </div>
 
-<%= link_to "New card", new_card_path %>

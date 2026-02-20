@@ -4,6 +4,9 @@
 
 <div>
   <%= link_to "Edit this card", edit_card_path(@card) %> |
+  <% if @card.card_id %>
+    <%= link_to "Back to parent card", @card.card %> |
+  <% end %>
   <%= link_to "Back to cards", cards_path %>
 
   <%= button_to "Destroy this card", @card, method: :delete %>

@@ -3,7 +3,7 @@
      draggable="true"
      data-controller="card"
      data-card-id-value="<%= card.id %>"
-     data-action="dragstart->card#dragStart dragover->card#dragOver drop->card#drop click->card#goToCard">
+     data-action="<%= card_actions(card) %>">
   <h1><%= link_to card.title, card %></h1>
 
   <div class="card-content">
